@@ -16,12 +16,10 @@ class HouseTest < Minitest::Test
   end
 
   def test_it_has_a_price
-    skip
-    assert_equal 40000, @house.price
+    assert_equal 400000, @house.price
   end
 
   def test_it_has_an_address
-    skip
     assert_equal "123 sugar lane", @house.address
   end
 
