@@ -24,12 +24,10 @@ class HouseTest < Minitest::Test
   end
 
   def test_it_has_rooms
-    skip
     assert_equal [], @house.rooms
   end
 
   def test_rooms_can_be_added
-    skip
     @house.add_room(@room_1)
     @house.add_room(@room_2)
 
