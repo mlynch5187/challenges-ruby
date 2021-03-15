@@ -17,7 +17,6 @@ class RoomTest < Minitest::Test
   end
 
   def test_room_has_an_area
-    skip
     assert_equal 130, @room.area
   end
 
