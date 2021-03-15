@@ -23,7 +23,6 @@ class SchoolTest < Minitest::Test
   end
 
   def test_it_starts_with_no_student_names
-    skip
     school = School.new('9:00', 7)
 
     assert_equal [], school.student_names
