@@ -13,7 +13,6 @@ class RoomTest < Minitest::Test
   end
 
   def test_room_has_a_category
-    skip
     assert_equal :bedroom, @room.category
   end
 
