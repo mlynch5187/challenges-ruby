@@ -16,7 +16,6 @@ class PotluckTest < Minitest::Test
   end
 
   def test_it_has_dishes
-    skip
     assert_equal [], @potluck.dishes
   end
 
