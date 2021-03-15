@@ -20,8 +20,7 @@ class RoomTest < Minitest::Test
     assert_equal 130, @room.area
   end
 
-  def test_room_can_be_painted
-    skip
+  def test_room_can_be_painted    
     assert_equal false, @room.is_painted?
 
     @room.paint
