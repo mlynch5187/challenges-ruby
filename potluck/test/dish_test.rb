@@ -5,11 +5,11 @@ require './potluck/lib/dish'
 class Potluck < Minitest::Test
 
   def setup
-    dish = Dish.new("Couscous Salad", :appetizer)
+    @dish = Dish.new("Couscous Salad", :appetizer)
   end
 
   def test_it_exists
-    assert_instance_of Potluck, @dish
+    assert_instance_of Dish, @dish
   end
 
   def test_it_has_a_name
