@@ -20,9 +20,8 @@ class PotluckTest < Minitest::Test
   end
 
   def test_it_has_dishes
-    skip
     @potluck.add_dish(@couscous_salad)
-    @potluck.add_dish(cocktail_meatballs)
+    @potluck.add_dish(@cocktail_meatballs)
 
     assert_equal [@couscous_salad, @cocktail_meatballs], @potluck.dishes
     assert_equal 2, @potluck.dishes.length
