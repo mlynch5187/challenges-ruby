@@ -12,7 +12,6 @@ class PotluckTest < Minitest::Test
   end
 
   def test_it_has_a_date
-    skip
     assert_equal "7-13-18", @potluck.date
   end
 
