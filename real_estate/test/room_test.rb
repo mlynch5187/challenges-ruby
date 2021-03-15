@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/room'
+require './real_estate/lib/room'
 
 class RoomTest < Minitest::Test
 
@@ -13,18 +13,21 @@ class RoomTest < Minitest::Test
   end
 
   def test_room_has_a_category
+    skip
     assert_equal :bedroom, @room.category
   end
 
   def test_room_has_an_area
+    skip
     assert_equal 130, @room.area
   end
 
   def test_room_can_be_painted
+    skip
     assert_equal false, @room.is_painted?
 
     @room.paint
 
-    assert_equal true, @room.is_painted?    
+    assert_equal true, @room.is_painted?
   end
 end
