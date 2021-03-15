@@ -52,7 +52,6 @@ class SchoolTest < Minitest::Test
   end
 
   def test_standard_student_names
-    skip
     school = School.new('9:00', 7)
     school.add_student_name('Aurora')
     school.add_student_name('tim')

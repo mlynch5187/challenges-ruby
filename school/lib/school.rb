@@ -21,4 +21,10 @@ class School
       false
     end
   end
+
+  def standard_student_names
+    student_names.map do |student|
+      student.capitalize
+    end
+  end
 end
