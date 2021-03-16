@@ -95,7 +95,7 @@ pry(main)> room_1 = Room.new(:bedroom, 10, '13')
 #=> #<Room:0x00007fccd29b5720...>
 
 pry(main)> room_2 = Room.new(:bedroom, 11, '15')    
-#=> #<Room:0x00007fccd2985f48...>
+#=>   #<Room:0x00007fccd2985f48...>
 
 pry(main)> room_3 = Room.new(:living_room, 25, '15')
 #=> #<Room:0x00007fccd383c2d0...>
