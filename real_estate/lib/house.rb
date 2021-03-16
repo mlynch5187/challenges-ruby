@@ -32,4 +32,8 @@ class House
     house_info['address'] = @address
     house_info
   end
+
+  def rooms_sorted_by_area
+    @rooms.sort_by { |room| room.area }.reverse
+  end
 end
