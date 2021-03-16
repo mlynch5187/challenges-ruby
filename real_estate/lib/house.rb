@@ -23,7 +23,7 @@ class House
   end
 
   def area
-    @rooms.sum { |room| room.area }
+    @rooms.sum {|room| room.area}
   end
 
   def details
@@ -34,6 +34,23 @@ class House
   end
 
   def rooms_sorted_by_area
-    @rooms.sort_by { |room| room.area }.reverse
+    @rooms.sort_by {|room| room.area}.reverse
+  end
+
+  def rooms_by_category
+    room_categories = {}
+    @rooms.each do |room|
+      room_categories[room.category] = []
+    end
+    room_categories.uniq.each do |room_category|
+      room_category.flatten
+    end
+    room_categories
+    @rooms.each do |room|
+      if room_categories.include?(room.category)
+        room_categories[room.category] <<room
+      end
+    end
+    room_categories
   end
 end
