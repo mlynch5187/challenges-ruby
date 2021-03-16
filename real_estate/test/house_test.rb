@@ -63,4 +63,36 @@ class HouseTest < Minitest::Test
     expected = {"price" => 400000, "address" => "123 sugar lane"}
     assert_equal expected, @house.details
   end
+
+  def price_for_square_foot
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    @house.add_room(@room_3)
+    @house.add_room(@room_4)
+
+    assert_equal 210.53, @house.price_per_square_foot
+  end
+
+  def test_rooms_can_be_sorted_by_area
+    skip
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    @house.add_room(@room_3)
+    @house.add_room(@room_4)
+
+    assert_equal [@room_4, @room_3, @room_2, @room_1], @house.rooms_sorted_by_area
+  end
+
+  def test_rooms_can_be_sorted_by_category
+    skip
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    @house.add_room(@room_3)
+    @house.add_room(@room_4)
+    expected = {:bedroom=>[@room_1, @room_2],
+                :living_room=> [@room_3],
+                :basement=> [@room_4]}
+
+    assert_equal expected, @house.rooms_by_category
+  end
 end
