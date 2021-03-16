@@ -51,7 +51,6 @@ class HouseTest < Minitest::Test
   end
 
   def test_house_area
-    skip
     @house.add_room(@room_1)
     @house.add_room(@room_2)
     @house.add_room(@room_3)
