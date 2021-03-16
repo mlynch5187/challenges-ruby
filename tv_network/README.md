@@ -1,169 +1,193 @@
-# Real Estate
+# TV Network
 
-## Setup
+## Instructions
 
 * Fork this Repository
-* Clone YOUR fork
-* Compete the activity below
-* Push your solution to your fork
-* Submit a pull request from your repository to the turingschool-examples repository
-  * Make sure to put your name in your PR!
-
-# Activity
+* Clone your forked repo to your computer.
+* Complete the activity below.
+* Push your solution to your forked repo
+* Submit a pull request from your repository to this repository
+  * Put your name in your PR!
 
 ## Iteration 1
 
-Start by making the three existing tests pass (removing the skips as you go), and then use TDD to update the `Room` class that responds to the following interaction pattern:
+Use TDD to create a `Character` class that responds to the following interaction pattern:
 
 ```ruby
-pry(main)> require './lib/room'
-#=> true
+pry(main)> require './lib/character'
+# => true
 
-pry(main)> room = Room.new(:bedroom, 10, "13")
-#=> #<Room:0x00007fa53b9ca0a8 @category=:bedroom, @length=10, @width="13">
+pry(main)> kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})    
+# => #<Character:0x00007f98a4ba8dc8...>
 
-pry(main)> room.category
-#=> :bedroom
+pry(main)> kitt.name
+# => "KITT"
 
-pry(main)> room.area
-#=> 130
+pry(main)> kitt.actor
+# => "William Daniels"
 
-pry(main)> room.is_painted?
-#=> false
-
-pry(main)> room.paint
-
-pry(main)> room.is_painted?
-#=> true
+pry(main)> kitt.salary
+# => 1000000
 ```
 
 ## Iteration 2
 
-Use TDD to create a `House` class that responds to the following interaction pattern:
+Use TDD to create a `Show` class that responds to the following interaction pattern:
 
 ```ruby
-pry(main)> require './lib/room'
-#=> true
+pry(main)> require './lib/character'
+# => true
 
-pry(main)> require './lib/house'
-#=> true
+pry(main)> require './lib/show'
+# => true
 
-pry(main)> house = House.new("$400000", "123 sugar lane")
-#=> #<House:0x00007fccd30375f8...>
+pry(main)> kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})    
+# => #<Character:0x00007f98a4ba8dc8...>
 
-pry(main)> house.price
-#=> 400000
+pry(main)> michael_knight = Character.new({name: "Michael Knight", actor: "David Hasselhoff", salary: 1_600_000})
+# => #<Character:0x00007f8327213de0...>
 
-pry(main)> house.address
-#=> "123 sugar lane"
+pry(main)> knight_rider = Show.new("Knight Rider", "Glen Larson", [michael_knight, kitt])    
+# => #<Show:0x00007f83280b3288...>
 
-pry(main)> house.rooms
-#=> []
+pry(main)> knight_rider.name
+# => "Knight Rider"
 
-pry(main)> room_1 = Room.new(:bedroom, 10, '13')
-#=> #<Room:0x00007fccd29b5720...>
+pry(main)> knight_rider.creator
+# => "Glen Larson"
 
-pry(main)> room_2 = Room.new(:bedroom, 11, '15')    
-#=> #<Room:0x00007fccd2985f48...>
+pry(main)> knight_rider.characters
+# => [#<Character:0x00007f8327213de0...>, #<Character:0x00007f8326ab57d8...>]
 
-pry(main)> house.add_room(room_1)
+pry(main)> knight_rider.total_salary
+# => 2600000
 
-pry(main)> house.add_room(room_2)    
+pry(main)> knight_rider.highest_paid_actor
+# => "David Hasselhoff"
 
-pry(main)> house.rooms
-#=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
+pry(main)> knight_rider.actors
+# => ["David Hasselhoff", "William Daniels"]
+
+
 ```
 
 ## Iteration 3
 
-Use TDD to update your `House` class so that it responds to the following interaction pattern. A house is `above_market_average` if its price is greater than $500,000.
+Use TDD to create a `Network` class that responds to the following interaction pattern. A character is a main character for the network if their salary is greater than 500_000 and their character name has no lowercase letters.
 
 ```ruby
-pry(main)> require './lib/room'
-#=> true
+pry(main)> require './lib/network'
+# => true
 
-pry(main)> require './lib/house'
-#=> true
+pry(main)> require './lib/show'
+# => true
 
-pry(main)> house = House.new("$400000", "123 sugar lane")
-#=> #<House:0x00007fccd30375f8...>
+pry(main)> require './lib/character'
+# => true
 
-pry(main)> house.above_market_average?
-#=> false
+pry(main)> nbc = Network.new("NBC")    
+# => #<Network:0x00007fe5f83ea3b0...>
 
-pry(main)> room_1 = Room.new(:bedroom, 10, '13')
-#=> #<Room:0x00007fccd29b5720...>
+pry(main)> nbc.name
+# => "NBC"
 
-pry(main)> room_2 = Room.new(:bedroom, 11, '15')    
-#=> #<Room:0x00007fccd2985f48...>
+pry(main)> nbc.shows
+# => []
 
-pry(main)> room_3 = Room.new(:living_room, 25, '15')
-#=> #<Room:0x00007fccd383c2d0...>
+pry(main)> michael_knight = Character.new({name: "Michael Knight", actor: "David Hasselhoff", salary: 1_600_000})    
+# => #<Character:0x00007fe5f88721f8...>
 
-pry(main)> room_4 = Room.new(:basement, 30, '41')
-#=> #<Room:0x00007fccd297dc30...>
+pry(main)> kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})    
+# => #<Character:0x00007fe5f8448f78...>
 
-pry(main)> house.add_room(room_1)
+pry(main)> knight_rider = Show.new("Knight Rider", "Glen Larson", [michael_knight, kitt])    
+# => #<Show:0x00007fe5f8398970...>
 
-pry(main)> house.add_room(room_2)    
+pry(main)> leslie_knope = Character.new({name: "Leslie Knope", actor: "Amy Poehler", salary: 2_000_000})
+# => #<Character:0x00007fe5f832bb18...>
 
-pry(main)> house.add_room(room_3)
+pry(main)> ron_swanson = Character.new({name: "Ron Swanson", actor: "Nick Offerman", salary: 1_400_000})    
+# => #<Character:0x00007fe5f8172a60...>
 
-pry(main)> house.add_room(room_4)
+pry(main)> parks_and_rec = Show.new("Parks and Recreation", "Michael Shur & Greg Daniels", [leslie_knope, ron_swanson])    
+# => #<Show:0x00007fe5f88b0a20...>
 
-pry(main)> house.rooms_from_category(:bedroom)
-#=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
+pry(main)> nbc.add_show(knight_rider)
 
-pry(main)> house.rooms_from_category(:basement)
-#=> [#<Room:0x00007fccd297dc30...>]
+pry(main)> nbc.add_show(parks_and_rec)    
 
-pry(main)> house.area
-#=> 1900
+pry(main)> nbc.shows
+# => [#<Show:0x00007fe5f8398970...>, #<Show:0x00007fe5f88b0a20...>]
 
-pry(main)> house.details
-#=> {"price" => 400000, "address" => "123 sugar lane"}
+pry(main)> nbc.main_characters
+# => [#<Character:0x00007f98a4ba8dc8...>]
+
+pry(main)> nbc.actors_by_show
+# => {
+      #<Show:0x00007fe5f8398970...> => ["David Hasselhoff", "William Daniels"],
+      #<Show:0x00007fe5f88b0a20...> => ["Amy Poehler", "Nick Offerman"]
+#    }
 ```
 
 ## Iteration 4
 
-Use TDD to update your `House` class so that it responds to the following interaction pattern:
+Use TDD to update your `Network` class so that it responds to the following interaction pattern. An actor is considered prolific if they have been in more than one show for that network:
 
 ```ruby
-pry(main)> require './lib/room'
-#=> true
+pry(main)> require './lib/network'
+# => true
 
-pry(main)> require './lib/house'
-#=> true
+pry(main)> require './lib/show'
+# => true
 
-pry(main)> house = House.new("$400000", "123 sugar lane")
-#=> #<House:0x00007fccd30375f8...>
+pry(main)> require './lib/character'
+# => true
 
-pry(main)> room_1 = Room.new(:bedroom, 10, '13')
-#=> #<Room:0x00007fccd29b5720...>
+pry(main)> nbc = Network.new("NBC")    
+# => #<Network:0x00007fe5f83ea3b0...>
 
-pry(main)> room_2 = Room.new(:bedroom, 11, '15')    
-#=> #<Room:0x00007fccd2985f48...>
+pry(main)> michael_knight = Character.new({name: "Michael Knight", actor: "David Hasselhoff", salary: 1_600_000})    
+# => #<Character:0x00007fe5f88721f8...>
 
-pry(main)> room_3 = Room.new(:living_room, 25, '15')
-#=> #<Room:0x00007fccd383c2d0 @category=:living_room, @length=25, @width=15>
+pry(main)> kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})    
+# => #<Character:0x00007fe5f8448f78...>
 
-pry(main)> room_4 = Room.new(:basement, 30, '41')
-#=> #<Room:0x00007fccd297dc30 @category=:basement, @length=30, @width=41>
+pry(main)> knight_rider = Show.new("Knight Rider", "Glen Larson", [michael_knight, kitt])    
+# => #<Show:0x00007fe5f8398970...>
 
-pry(main)> house.add_room(room_4)
+pry(main)> mitch = Character.new({name: "Mitch Buchannon", actor: "David Hasselhoff", salary: 1_200_000})    
+# => #<Character:0x00007fe5f8448f78...>
 
-pry(main)> house.add_room(room_1)
+pry(main)> baywatch = Show.new("Baywatch", "Gregory Bonann", [mitch])    
+# => #<Show:0x00007fe5f8398970...>
 
-pry(main)> house.add_room(room_3)
+pry(main)> leslie_knope = Character.new({name: "Leslie Knope", actor: "Amy Poehler", salary: 2_000_000})
+# => #<Character:0x00007fe5f832bb18...>
 
-pry(main)> house.add_room(room_2)    
+pry(main)> ron_swanson = Character.new({name: "Ron Swanson", actor: "Nick Offerman", salary: 1_400_000})    
+# => #<Character:0x00007fe5f8172a60...>
 
-pry(main)> house.price_per_square_foot
-#=> 210.53
+pry(main)> parks_and_rec = Show.new("Parks and Recreation", "Michael Shur & Greg Daniels", [leslie_knope, ron_swanson])    
+# => #<Show:0x00007fe5f88b0a20...>
 
-pry(main)> house.rooms_sorted_by_area
-#=> [#<Room:0x00007fccd297dc30...>, #<Room:0x00007fccd383c2d0...>, #<Room:0x00007fccd2985f48...>, #<Room:0x00007fccd29b5720...>]
+pry(main)> parks_and_rec = Show.new("Parks and Recreation", "Michael Shur & Greg Daniels", [leslie_knope, ron_swanson])    
+# => #<Show:0x00007fe5f88b0a20...>
 
-pry(main)> house.rooms_by_category
-#=> {:bedroom=>[#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>], :living_room=> [#<Room:0x00007fccd383c2d0...>], :basement=> [#<Room:0x00007fccd297dc30...>]}
+pry(main)> nbc.add_show(knight_rider)
+
+pry(main)> nbc.add_show(baywatch)    
+
+pry(main)> nbc.add_show(parks_and_rec)    
+
+pry(main)> nbc.shows_by_actor
+# => {
+#      "David Hasselhoff" => [knight_rider, baywatch],  
+#      "William Daniels" => [knight_rider],
+#      "Amy Poehler" => [parks_and_rec],
+#      "Nick Offerman" => [parks_and_rec]
+#    }
+
+pry(main)> nbc.prolific_actors
+# => ["David Hasselhoff"]
+
 ```
