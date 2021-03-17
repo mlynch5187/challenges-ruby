@@ -28,8 +28,7 @@ class ShowTest < Minitest::Test
   end
 
   def test_total_salary
-    skip
-    assert_equal @michael_knight, 260000
+    assert_equal @knight_rider, 260000
   end
 
   def test_highest_paid_actor
