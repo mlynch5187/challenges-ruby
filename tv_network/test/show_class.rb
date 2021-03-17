@@ -28,7 +28,7 @@ class ShowTest < Minitest::Test
   end
 
   def test_total_salary
-    assert_equal @knight_rider, 260000
+    assert_equal @knight_rider.total_salary, 2600000
   end
 
   def test_highest_paid_actor
