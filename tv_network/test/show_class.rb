@@ -36,7 +36,6 @@ class ShowTest < Minitest::Test
   end
 
   def test_it_has_actors
-    skip
     assert_equal ["David Hasselhoff", "William Daniels"], @knight_rider.actors
   end
 end
