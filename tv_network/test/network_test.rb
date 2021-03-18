@@ -45,7 +45,6 @@ class NetworkTest < Minitest::Test
   end
 
   def test_actors_by_show
-    skip
     @nbc.add_show(@knight_rider)
     @nbc.add_show(@parks_and_rec)
     expected = { @knight_rider => ["David Hasselhoff", "William Daniels"],

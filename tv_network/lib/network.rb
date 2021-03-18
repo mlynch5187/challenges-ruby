@@ -12,4 +12,12 @@ class Network
   def main_characters
     @shows.map {|show| show.characters}.flatten
   end
+
+  def actors_by_show
+    show_actors = {}
+    @shows.each do |show|
+      show_actors[show] = show.actors
+    end
+    show_actors
+  end
 end
