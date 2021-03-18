@@ -32,7 +32,6 @@ class ShowTest < Minitest::Test
   end
 
   def test_highest_paid_actor
-    skip
     assert_equal "David Hasselhoff", @knight_rider.highest_paid_actor
   end
 
