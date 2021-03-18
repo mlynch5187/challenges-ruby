@@ -33,7 +33,6 @@ class MarketTest < Minitest::Test
   end
 
   def test_it_has_vendors
-    skip
     assert_equal [], @market.vendors
   end
 
