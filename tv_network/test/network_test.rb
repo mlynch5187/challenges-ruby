@@ -31,7 +31,6 @@ class NetworkTest < Minitest::Test
   end
 
   def test_shows_can_be_added
-    skip
     @nbc.add_show(@knight_rider)
     @nbc.add_show(@parks_and_rec)
 
