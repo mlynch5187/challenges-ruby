@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require './market/lib/item'
 require './market/lib/vendor'
 
-class MarketTest < Minitest::Test
+class ItemTest < Minitest::Test
 
   def setup
     @item1 = Item.new({name: 'Peach', price: "$0.75"})
