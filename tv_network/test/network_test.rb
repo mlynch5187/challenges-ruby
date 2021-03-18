@@ -23,12 +23,10 @@ class NetworkTest < Minitest::Test
   end
 
   def test_it_has_a_name
-    skip
     assert_equal "NBC", @nbc.name
   end
 
   def test_it_has_shows
-    skip
     assert_equal [], @nbc.shows
   end
 
