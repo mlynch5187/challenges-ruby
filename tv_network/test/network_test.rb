@@ -38,10 +38,10 @@ class NetworkTest < Minitest::Test
   end
 
   def test_it_has_main_characters
-    skip
+    @nbc.add_show(@knight_rider)
     @nbc.add_show(@parks_and_rec)
 
-    assert_equal [@leslie_knope, @ron_swanson], @nbc.main_characters
+    assert_equal [@michael_knight, @kitt, @leslie_knope, @ron_swanson], @nbc.main_characters
   end
 
   def test_actors_by_show
