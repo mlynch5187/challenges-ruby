@@ -3,7 +3,6 @@ require './market/lib/item'
 require './market/lib/vendor'
 
 class VendorTest < Minitest::Test
-
   def setup
     @vendor = Vendor.new("Rocky Mountain Fresh")
     @item1 = Item.new({name: 'Peach', price: "$0.75"})
