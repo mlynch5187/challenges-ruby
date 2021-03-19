@@ -67,7 +67,6 @@ class MarketTest < Minitest::Test
     @vendor2.stock(@item3, 25)
     @vendor3.stock(@item1, 65)
 
-    skip
     assert_equal 29.75, @vendor1.potential_revenue
     assert_equal 345.00, @vendor2.potential_revenue
     assert_equal 48.75, @vendor3.potential_revenue

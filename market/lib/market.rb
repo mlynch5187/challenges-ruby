@@ -16,5 +16,4 @@ class Market
   def vendors_that_sell(item)
     @vendors.find_all {|vendor| vendor.inventory.include?(item)}
   end
-
 end
