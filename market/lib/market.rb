@@ -37,7 +37,5 @@ class Market
     end
   end
 
-  def overstocked_items
-    require "pry"; binding.pry
-  end
+  def overstocked_items; end
 end
