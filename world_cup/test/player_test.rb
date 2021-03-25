@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require './world_cup/lib/player'
 
 class PlayerTest < Minitest::Test
-
   def setup
     @player = Player.new({name: "Luka Modric", position: "midfielder"})
   end
