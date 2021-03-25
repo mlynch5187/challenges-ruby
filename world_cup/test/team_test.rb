@@ -20,9 +20,7 @@ class PlayerTest < Minitest::Test
 
   def test_it_can_be_eliminated
     assert_equal false, @team.eliminated?
-
     @team.eliminated = true
-
     assert_equal true, @team.eliminated?
   end
 
@@ -38,6 +36,9 @@ class PlayerTest < Minitest::Test
   end
 
   def test_players_by_position
+    @team.add_player(@mbappe)
+    @team.add_player(@pogba)
+
     assert_equal [@pogba], @team.players_by_position("midfielder")
     assert_equal [], @team.players_by_position("defender")
   end
