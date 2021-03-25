@@ -36,6 +36,4 @@ class Market
       result
     end
   end
-
-  def overstocked_items; end
 end
