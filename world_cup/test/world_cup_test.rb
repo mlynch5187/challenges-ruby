@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require './world_cup/lib/player'
 require './world_cup/lib/team'
+require './world_cup/lib/world_cup'
 
 class WorldCupTest < Minitest::Test
 
