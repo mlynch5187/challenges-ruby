@@ -9,7 +9,7 @@ class PatronTest < Minitest::Test
   end
 
   def test_it_exists
-    assert_equal Patron, @patron_1
+    assert_instance_of Patron, @patron_1
   end
 
   def test_it_has_a_name
