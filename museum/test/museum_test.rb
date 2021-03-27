@@ -91,17 +91,14 @@ class MuseumTest < Minitest::Test
     @dmns.add_exhibit(@dead_sea_scrolls)
     @dmns.add_exhibit(@imax)
     @dmns.admit(@patron_1)
-    @dmns.admit(@patron_2)
     @dmns.admit(@patron_3)
 
+    assert_equal nil, @dmns.draw_lottery_winner(@imax)
     @dmns.stubs(:ticket_lottery_contestants).returns([@patron_1])
     assert_equal @patron_1, @dmns.draw_lottery_winner(@dead_sea_scrolls)
   end
 end
 
-# pry(main)> dmns.draw_lottery_winner(gems_and_minerals)
-# # => nil
-#
 # #If no contestants are elgible for the lottery, nil is returned.
 #
 # pry(main)> dmns.announce_lottery_winner(dead_sea_scrolls)
