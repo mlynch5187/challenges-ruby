@@ -38,4 +38,8 @@ class Museum
       patron.interests.include?(exhibit.name)
     end.uniq
   end
+
+  def draw_lottery_winner(exhibit)
+    ticket_lottery_contestants(exhibit).sample
+  end
 end
