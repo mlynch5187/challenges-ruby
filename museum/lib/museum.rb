@@ -34,12 +34,8 @@ class Museum
   end
 
   def ticket_lottery_contestants(exhibit)
-    x = []
-    patrons_by_exhibit_interest.values.flatten.each do |patron|
-      if patron.interests.include?(exhibit.name)
-        x << patron
-      end
-    end
-    x.uniq
+    patrons_by_exhibit_interest.values.flatten.find_all do |patron|
+      patron.interests.include?(exhibit.name)
+    end.uniq    
   end
 end
