@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require './museum/lib/exhibit'
 require './museum/lib/patron'
 require './museum/lib/museum'
+require 'mocha/minitest'
 
 class MuseumTest < Minitest::Test
 
@@ -86,25 +87,18 @@ class MuseumTest < Minitest::Test
   end
 
   def test_draw_lottery_winner
-    Patron.stub(:name, "Johnny") do
-      patron_1 = Patron.new("Johnny", 20)
-      patron_1.add_interest("Dead Sea Scrolls")
-      patron_2 = Patron.new("Bob", 20)
-      patron_2.add_interest("Dead Sea Scrolls")
-      @dmns.add_exhibit(@gems_and_minerals)
-      @dmns.add_exhibit(@dead_sea_scrolls)
-      @dmns.add_exhibit(@imax)
-      @dmns.admit(patron_1)
-      @dmns.admit(patron_2)
+    @dmns.add_exhibit(@gems_and_minerals)
+    @dmns.add_exhibit(@dead_sea_scrolls)
+    @dmns.add_exhibit(@imax)
+    @dmns.admit(@patron_1)
+    @dmns.admit(@patron_2)
+    @dmns.admit(@patron_3)
 
-    assert_equal patron_1, @dmns.draw_lottery_winner(@dead_sea_scrolls)
-    end
+    @dmns.stubs(:ticket_lottery_contestants).returns([@patron_1])
+    assert_equal @patron_1, @dmns.draw_lottery_winner(@dead_sea_scrolls)
   end
 end
 
-# pry(main)> dmns.draw_lottery_winner(dead_sea_scrolls)
-# # => "Johnny" or "Bob" can be returned here. Fun!
-#
 # pry(main)> dmns.draw_lottery_winner(gems_and_minerals)
 # # => nil
 #
