@@ -1,6 +1,5 @@
 require 'minitest/autorun'
 require './museum/lib/exhibit'
-require './museum/lib/patron'
 
 class ExhibitTest < Minitest::Test
 
