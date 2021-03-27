@@ -13,4 +13,8 @@ class Course
       false
     end
   end
+
+  def enroll(student)
+    @students << student
+  end
 end
