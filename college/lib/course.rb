@@ -3,6 +3,14 @@ class Course
   def initialize(name, capacity)
     @name = name
     @capacity = capacity
-    @student = []
+    @students = []
+  end
+
+  def full?
+    if @students.length >= @capacity
+      true
+    else
+      false
+    end
   end
 end
