@@ -30,12 +30,11 @@ class DockTest < Minitest::Test
     @dock.rent(@kayak_1, @patrick)
     @dock.rent(@kayak_2, @patrick)
     @dock.rent(@sup_1, @eugene)
-    expected = =>
-    {
-      @kayak_1 => @patrick,
-      @kayak_2 => @patrick,
-      @sup_1 => @eugene
-    }
+    expected = {
+                  @kayak_1 => @patrick,
+                  @kayak_2 => @patrick,
+                  @sup_1 => @eugene
+                }
 
     assert_equal expected, @dock.rental_log
   end
