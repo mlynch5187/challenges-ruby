@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require './boat_rental/lib/boat'
 
 class BoatTest < Minitest::Test
-
   def setup
     @kayak = Boat.new(:kayak, 20)
   end

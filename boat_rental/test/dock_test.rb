@@ -4,7 +4,6 @@ require './boat_rental/lib/dock'
 require './boat_rental/lib/renter'
 
 class DockTest < Minitest::Test
-
   def setup
     @dock = Dock.new("The Rowing Dock", 3)
     @kayak_1 = Boat.new(:kayak, 20)
