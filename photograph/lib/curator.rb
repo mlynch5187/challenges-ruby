@@ -3,4 +3,8 @@ class Curator
   def initialize()
     @photographs = []
   end
+
+  def add_photograph(photo)
+    @photographs << photo
+  end
 end
