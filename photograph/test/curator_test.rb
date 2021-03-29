@@ -32,7 +32,6 @@ class CuratorTest < Minitest::Test
               died: "1984",
               country: "United States"
               })
-
   end
 
   def test_it_exists
