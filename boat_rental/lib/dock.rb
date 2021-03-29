@@ -13,7 +13,11 @@ class Dock
   def charge(boat)
     charges = {}
     charges[:card_number] = @rental_log[boat].credit_card_number
-    charges[:amount] = boat.hours_rented * boat.price_per_hour
+    if boat.hours_rented <= max_rental_time
+      charges[:amount] = (boat.hours_rented * boat.price_per_hour)
+    else
+      charges[:amount] = (max_rental_time * boat.price_per_hour)
+    end
     charges
   end
 end
