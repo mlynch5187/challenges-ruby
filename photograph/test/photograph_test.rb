@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require './photograph/lib/photograph'
 
 class PhotographTest < Minitest::Test
-
   def setup
     attributes = {
                     id: "1",
