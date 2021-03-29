@@ -17,15 +17,15 @@ class PhotographTest < Minitest::Test
   end
 
   def test_it_has_an_id
-    assert_equal 1, @photograph.id
+    assert_equal "1", @photograph.id
   end
 
   def test_it_has_a_name
-    assert_equal "Rue Mouffetard, Paris (Boy with Bottles)"m @photograph.name
+    assert_equal "Rue Mouffetard, Paris (Boy with Bottles)", @photograph.name
   end
 
   def test_it_has_an_artist_id
-    assert_equal 4, @photograph.artist_id
+    assert_equal "4", @photograph.artist_id
   end
 
   def test_it_has_a_year
