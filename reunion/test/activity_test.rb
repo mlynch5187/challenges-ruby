@@ -16,7 +16,7 @@ class ActivityTest < Minitest::Test
   end
 
   def test_it_has_participants
-    assert_equal {}, @activity.participants
+    assert_equal ({}), @activity.participants
   end
 
   def test_it_can_add_participants
