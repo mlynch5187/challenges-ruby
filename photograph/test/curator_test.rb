@@ -104,7 +104,6 @@ class CuratorTest < Minitest::Test
   end
 
   def test_artists_with_multiple_photographs
-    skip
     @curator.add_artist(@artist_1)
     @curator.add_artist(@artist_2)
     @curator.add_artist(@artist_3)

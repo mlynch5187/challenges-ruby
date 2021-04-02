@@ -29,4 +29,23 @@ class Curator
     end
     artist_photos
   end
+
+  def artists_with_multiple_photographs
+    artist_list = []
+    multiple_photos = []
+    counts = Hash.new(0)
+    photographs_by_artist.keys.each do |artist|
+    photographs.each do |photo|
+      if artist.id === photo.artist_id
+        artist_list << artist.name
+        end
+      end
+    end
+    artist_list.tally.each_with_index do |(key, value), index|
+      if value > 1
+        multiple_photos << key
+      end
+    end
+    multiple_photos
+  end
 end
