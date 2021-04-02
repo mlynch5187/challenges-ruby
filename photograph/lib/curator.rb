@@ -48,4 +48,14 @@ class Curator
     end
     multiple_photos
   end
+
+  def photographs_taken_by_artist_from(country)
+    photos_by_country = []
+    photographs_by_artist.each_with_index do |(key, value), index|
+      if key.country === country
+        photos_by_country << value
+      end
+    end
+    photos_by_country.flatten
+  end
 end
