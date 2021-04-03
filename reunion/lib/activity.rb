@@ -20,7 +20,7 @@ class Activity
   def owed
     owed_by_participant = {}
     @participants.each_with_index do |(key, value), index|
-      owed_by_participant[key] = total_cost/2 - value
+      owed_by_participant[key] = split - value
     end
     owed_by_participant
   end
