@@ -17,7 +17,7 @@ class ReunionTest < Minitest::Test
   end
 
   def test_it_has_activities
-    assert_equal [], @Reunion.activities
+    assert_equal [], @reunion.activities
 
     @reunion.add_activity(@activity_1)
 
