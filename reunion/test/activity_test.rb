@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require './reunion/lib/activity'
 
 class ActivityTest < Minitest::Test
-
   def setup
     @activity = Activity.new("Brunch")
   end
