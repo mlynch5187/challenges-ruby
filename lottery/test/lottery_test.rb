@@ -83,7 +83,6 @@ class LotteryTest < Minitest::Test
   end
 
   def test_registered_contestants
-    skip
     @alexander.add_game_interest('Pick 4')
     @alexander.add_game_interest('Mega Millions')
     @frederick.add_game_interest('Mega Millions')
@@ -96,7 +95,7 @@ class LotteryTest < Minitest::Test
     assert_equal ({"Pick 4"=> [@alexander]}), @lottery.registered_contestants
 
     @lottery.register_contestant(@alexander, @mega_millions)
-    assert_equal ({"Pick 4"=> [@alexander], "Mega Millions"=> [@alexander]})
+    assert_equal ({"Pick 4"=> [@alexander], "Mega Millions"=> [@alexander]}), @lottery.registered_contestants
 
     @lottery.register_contestant(@frederick, @mega_millions)
     @lottery.register_contestant(@winston, @cash_5)
