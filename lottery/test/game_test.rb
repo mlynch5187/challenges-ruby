@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-  require "./lottery/lib/game"
+require "./lottery/lib/game"
 
 class GameTest < Minitest::Test
 
