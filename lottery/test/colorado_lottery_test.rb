@@ -44,11 +44,11 @@ class ColoradoLotteryTest < Minitest::Test
   end
 
   def test_registered_contestants
-    assert_equal {}, @lottery.registered_contestants
+    assert_equal ({}), @lottery.registered_contestants
   end
 
   def test_current_contestants
-    assert_equal {}, @lottery.current_contestants
+    assert_equal ({}), @lottery.current_contestants
   end
 
   def test_interested_and_18
