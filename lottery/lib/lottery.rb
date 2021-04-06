@@ -7,8 +7,22 @@ class Lottery
   end
 
   def interested_and_18?(contestant, game)
-    if contestant.game_interests.include?("#{game.name}") && contestant.age >= 18
+    if contestant.game_interests.include?(game.name) && contestant.age >= 18
       true
+    else
+      false
+    end
+  end
+
+  def can_register?(contestant, game)
+    if interested_and_18?(contestant, game) === true
+      if game.national_drawing? === false && contestant.state_of_residence === "CO"
+        true
+      elsif game.national_drawing? === true && contestant.state_of_residence != "CO"
+        true
+      else
+        false
+      end
     else
       false
     end

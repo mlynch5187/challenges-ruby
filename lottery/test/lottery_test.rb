@@ -64,6 +64,12 @@ class LotteryTest < Minitest::Test
   end
 
   def test_can_register
+    @alexander.add_game_interest('Pick 4')
+    @alexander.add_game_interest('Mega Millions')
+    @frederick.add_game_interest('Mega Millions')
+    @winston.add_game_interest('Cash 5')
+    @winston.add_game_interest('Mega Millions')
+    @benjamin.add_game_interest('Mega Millions')
     assert_equal true, @lottery.can_register?(@alexander, @pick_4)
     assert_equal false, @lottery.can_register?(@alexander, @cash_5)
     assert_equal true, @lottery.can_register?(@frederick, @mega_millions)
