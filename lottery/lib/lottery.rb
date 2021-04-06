@@ -29,10 +29,19 @@ class Lottery
   end
 
   def register_contestant(contestant, game)
-    if registered_contestants.keys.include?("#{game.name}")        
+    if registered_contestants.keys.include?("#{game.name}")
       registered_contestants["#{game.name}"] << contestant
     else
       registered_contestants["#{game.name}"] = [contestant]
     end
+  end
+
+  def charge_contestants(game)
+    @registered_contestants["#{game.name}"].each do |contestant|
+      game.cost - contestant.spending_money
+      if registered_contestants.keys.include?("#{game.name}")
+        @registered_contestants["#{game.name}"] << contestant
+      end
+    end    
   end
 end
