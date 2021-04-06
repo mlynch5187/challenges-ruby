@@ -1,11 +1,11 @@
 require 'minitest/autorun'
 require "./lottery/lib/contestant"
 require "./lottery/lib/game"
-require "./lottery/lib/colorado_lottery"
+require "./lottery/lib/lottery"
 
-class ColoradoLotteryTest < Minitest::Test
+class LotteryTest < Minitest::Test
   def setup
-    @lottery = ColoradoLottery.new
+    @lottery = Lottery.new
     @pick_4 = Game.new('Pick 4', 2)
     @mega_millions = Game.new('Mega Millions', 5, true)
     @cash_5 = Game.new('Cash 5', 1)
@@ -36,7 +36,7 @@ class ColoradoLotteryTest < Minitest::Test
   end
 
   def test_it_exists
-    assert_instance_of ColoradoLottery, @colorado_lottery
+    assert_instance_of ColoradoLottery, @lottery
   end
 
   def test_lottery_winners
@@ -58,9 +58,9 @@ class ColoradoLotteryTest < Minitest::Test
     @winston.add_game_interest('Cash 5')
     @winston.add_game_interest('Mega Millions')
     @benjamin.add_game_interest('Mega Millions')
-    assert_equal true, @colorado_lottery.interested_and_18?(@alexander, @pick_4)
-    assert_equal false, @colorado_lotterylottery.interested_and_18?(@benjamin, @mega_millions)
-    assert_equal false, @lottery.interested_and_18?(@alexander, @cash_5)
+    assert_equal true, @lottery.interested_and_18?(@alexander, @pick_4)
+    assert_equal false, @coloradolottery.interested_and_18?(@benjamin, @mega_millions)
+    assert_equal false, @coloradolottery.interested_and_18?(@alexander, @cash_5)
   end
 
   def test_can_register

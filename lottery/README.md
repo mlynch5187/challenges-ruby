@@ -56,10 +56,11 @@ pry(main)> alexander.add_game_interest('Pick 4')
 pry(main)> alexander.game_interests
 => ["Mega Millions", "Pick 4"]
 
-Iteration 2
+## Iteration 2
 Use TDD to create a ColoradoLottery class that responds to the following interaction pattern.
 
 A contestant #can_register? if they are interested in the game, 18 years of age or older, and they are either a Colorado resident or this is a national game
+
 pry(main)> require "./lib/contestant"
 #=> true
 
@@ -157,9 +158,11 @@ pry(main)> lottery.can_register?(benjamin, mega_millions)
 
 pry(main)> lottery.can_register?(frederick, cash_5)
 #=> false
-Iteration 3
+
+## Iteration 3
 Use TDD to update your Lottery class so that it responds to the following interaction pattern.
 To save time, we will keep the same setup from iteration 2 with all of the same objects and interests, plus we will add one additional contestant with interests at a specific point in the interaction.
+
 We will only register contestants that #can_register?
 #eligible_contestants is a list of all the contestants who have been registered to play a given game and that have more spending_money than the cost.
 current_contestants are lists of contestant names who have been charged, organized by game.
