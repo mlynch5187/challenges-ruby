@@ -36,7 +36,7 @@ class LotteryTest < Minitest::Test
   end
 
   def test_it_exists
-    assert_instance_of ColoradoLottery, @lottery
+    assert_instance_of Lottery, @lottery
   end
 
   def test_lottery_winners
@@ -59,8 +59,8 @@ class LotteryTest < Minitest::Test
     @winston.add_game_interest('Mega Millions')
     @benjamin.add_game_interest('Mega Millions')
     assert_equal true, @lottery.interested_and_18?(@alexander, @pick_4)
-    assert_equal false, @coloradolottery.interested_and_18?(@benjamin, @mega_millions)
-    assert_equal false, @coloradolottery.interested_and_18?(@alexander, @cash_5)
+    assert_equal false, @lottery.interested_and_18?(@benjamin, @mega_millions)
+    assert_equal false, @lottery.interested_and_18?(@alexander, @cash_5)
   end
 
   def test_can_register
