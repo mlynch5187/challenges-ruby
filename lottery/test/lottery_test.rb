@@ -93,15 +93,15 @@ class LotteryTest < Minitest::Test
     assert_equal ({}), @lottery.registered_contestants
 
     @lottery.register_contestant(@alexander, @pick_4)
-    assert_equal {"Pick 4"=> [@alexander]}, @lottery.registered_contestants
+    assert_equal ({"Pick 4"=> [@alexander]}), @lottery.registered_contestants
 
     @lottery.register_contestant(@alexander, @mega_millions)
-    assert_equal {"Pick 4"=> [@alexander], "Mega Millions"=> [@alexander]}
+    assert_equal ({"Pick 4"=> [@alexander], "Mega Millions"=> [@alexander]})
 
     @lottery.register_contestant(@frederick, @mega_millions)
     @lottery.register_contestant(@winston, @cash_5)
     @lottery.register_contestant(@winston, @mega_millions)
-    assert_equal {"Pick 4"=> [@alexander], "Mega Millions" => [@alexander, @frederick, @winston], "Cash 5" => [@winston]} @lottery.registered_contestants
+    assert_equal ({"Pick 4"=> [@alexander], "Mega Millions" => [@alexander, @frederick, @winston], "Cash 5" => [@winston]}), @lottery.registered_contestants
 
     @grace.add_game_interest('Mega Millions')
     @grace.add_game_interest('Cash 5')
@@ -110,7 +110,7 @@ class LotteryTest < Minitest::Test
     @lottery.register_contestant(@grace, @cash_5)
     @lottery.register_contestant(@grace, @pick_4)
 
-    assert_equal {"Pick 4"=> [@alexander, @grace], "Mega Millions" => [@alexander, @frederick, @winston, @grace], "Cash 5" => [@winston, @grace]} @lottery.registered_contestants
+    assert_equal ({"Pick 4"=> [@alexander, @grace], "Mega Millions" => [@alexander, @frederick, @winston, @grace], "Cash 5" => [@winston, @grace]}), @lottery.registered_contestants
   end
 
   def test_eligible_contestants
@@ -164,7 +164,7 @@ class LotteryTest < Minitest::Test
 
     @lottery.charge_contestants(@cash_5)
 
-    expected_1 = {@cash_5 => ["Winston Churchill", "Grace Hopper"]}
+    expected_1 = ({@cash_5 => ["Winston Churchill", "Grace Hopper"]})
 
     assert_equal expected_1, @lottery.current_contestants
     assert_equal 19, @grace.spending_money
@@ -172,7 +172,7 @@ class LotteryTest < Minitest::Test
 
     @lottery.charge_contestants(@mega_millions)
 
-    expected_2 = {@cash_5 => ["Winston Churchill", "Grace Hopper"], @mega_millions => ["Alexander Aigades", "Frederick Douglas", "Grace Hopper"]}
+    expected_2 = ({@cash_5 => ["Winston Churchill", "Grace Hopper"], @mega_millions => ["Alexander Aigades", "Frederick Douglas", "Grace Hopper"]})
 
     assert_equal expected_2, @lottery.current_contestants
     assert_equal 14, @grace.spending_money
@@ -182,7 +182,7 @@ class LotteryTest < Minitest::Test
 
     @lottery.charge_contestants(@pick_4)
 
-    expected_3 = {@cash_5 => ["Winston Churchill", "Grace Hopper"], @mega_millions => ["Alexander Aigades", "Frederick Douglas", "Grace Hopper"], @pick_4 => ["Alexander Aigades", "Grace Hopper"]}
+    expected_3 = ({@cash_5 => ["Winston Churchill", "Grace Hopper"], @mega_millions => ["Alexander Aigades", "Frederick Douglas", "Grace Hopper"], @pick_4 => ["Alexander Aigades", "Grace Hopper"]})
 
     assert_equal expected_3, @lottery.current_contestants
   end
