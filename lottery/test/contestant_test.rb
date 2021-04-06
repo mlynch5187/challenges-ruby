@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require "./lottery/lib/contestant"
 
 class ContestantTest < Minitest::Test
-
   def setup
     @alexander = Contestant.new({first_name: 'Alexander',
                                   last_name: 'Aigiades',
@@ -16,7 +15,7 @@ class ContestantTest < Minitest::Test
   end
 
   def test_it_has_a_full_name
-    assert_equal "Alexander Algiades", @alexander.full_name
+    assert_equal "Alexander Aigiades", @alexander.full_name
   end
 
   def test_it_has_an_age
